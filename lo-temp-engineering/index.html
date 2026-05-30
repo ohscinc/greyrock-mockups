@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lo-Temp Engineering — Hero Mockup</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:       #0B1925;
+    --navy-mid:   #132333;
+    --steel:      #1E3448;
+    --gold:       #E8A020;
+    --gold-light: #F5BA44;
+    --ice:        #C8E2F5;
+    --ice-dim:    rgba(200,226,245,0.08);
+    --white:      #FFFFFF;
+    --muted:      #7A9BB5;
+    --border:     rgba(200,226,245,0.12);
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ─────────────────────────────────────── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    height: 72px;
+    background: rgba(11,25,37,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .logo-mark {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    background: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .logo-mark svg { display: block; }
+
+  .logo-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+    color: var(--white);
+    text-transform: uppercase;
+  }
+
+  .logo-text span {
+    display: block;
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--white); }
+
+  .nav-links .divider {
+    width: 1px;
+    height: 16px;
+    background: var(--border);
+  }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--navy) !important;
+    font-weight: 600 !important;
+    padding: 8px 16px;
+    border-radius: 4px;
+    letter-spacing: 0.04em !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+
+  /* ── HERO ────────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 100px 5% 60px;
+  }
+
+  /* Background grid texture */
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(200,226,245,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,226,245,0.035) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+  }
+
+  /* Diagonal accent stripe */
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    width: 55%;
+    height: 130%;
+    background: linear-gradient(135deg, var(--navy-mid) 0%, var(--steel) 60%, rgba(30,52,72,0) 100%);
+    clip-path: polygon(18% 0%, 100% 0%, 100% 100%, 0% 100%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  /* ── HERO LEFT ───────────────────────────────── */
+  .hero-left { position: relative; }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    padding: 6px 12px 6px 8px;
+    background: rgba(232,160,32,0.10);
+    border: 1px solid rgba(232,160,32,0.22);
+    border-radius: 3px;
+  }
+
+  .eyebrow-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .hero-headline {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: clamp(42px, 5.5vw, 72px);
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 22px;
+  }
+
+  .hero-headline em {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--muted);
+    max-width: 480px;
+    margin-bottom: 36px;
+  }
+
+  .hero-sub strong {
+    color: var(--ice);
+    font-weight: 500;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 44px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 14px 26px;
+    border-radius: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.15s;
+    white-space: nowrap;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+  }
+
+  .btn-primary svg { flex-shrink: 0; }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--ice);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 14px 26px;
+    border-radius: 4px;
+    border: 1px solid rgba(200,226,245,0.30);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: border-color 0.2s, color 0.2s, transform 0.15s;
+    white-space: nowrap;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--ice);
+    color: var(--white);
+    transform: translateY(-2px);
+  }
+
+  /* Trust bar */
+  .trust-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  .trust-item svg { color: var(--gold); flex-shrink: 0; }
+
+  /* ── HERO RIGHT — ENGINEERING VISUAL ─────────── */
+  .hero-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 480px;
+  }
+
+  .vis-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+  }
+
+  .vis-ring-1 { width: 420px; height: 420px; border-color: rgba(200,226,245,0.07); }
+  .vis-ring-2 { width: 310px; height: 310px; border-color: rgba(200,226,245,0.11); }
+  .vis-ring-3 { width: 200px; height: 200px; border-color: rgba(200,226,245,0.16); }
+
+  .vis-center {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--steel) 0%, var(--navy-mid) 100%);
+    border: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Orbiting dot */
+  .vis-orbit-wrap {
+    position: absolute;
+    width: 310px;
+    height: 310px;
+    animation: orbit 14s linear infinite;
+  }
+
+  @keyframes orbit {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  .vis-dot {
+    position: absolute;
+    top: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 12px rgba(232,160,32,0.6);
+  }
+
+  .vis-orbit-wrap-2 {
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    animation: orbit 22s linear infinite reverse;
+  }
+
+  .vis-dot-2 {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--ice);
+    opacity: 0.5;
+  }
+
+  /* Stat cards floating around visual */
+  .vis-stat {
+    position: absolute;
+    background: rgba(30,52,72,0.85);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    backdrop-filter: blur(8px);
+    min-width: 120px;
+    z-index: 3;
+  }
+
+  .vis-stat-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .vis-stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 400;
+    margin-top: 3px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .vis-stat-badge {
+    position: absolute;
+    background: rgba(30,52,72,0.88);
+    border: 1px solid rgba(232,160,32,0.35);
+    border-radius: 8px;
+    padding: 10px 14px;
+    backdrop-filter: blur(8px);
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ice);
+    white-space: nowrap;
+  }
+
+  .badge-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #4CD964;
+    flex-shrink: 0;
+    box-shadow: 0 0 6px rgba(76,217,100,0.7);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%,100% { transform: scale(1); opacity: 1; }
+    50%      { transform: scale(1.3); opacity: 0.7; }
+  }
+
+  .s-years   { top: 30px;  right: -10px; }
+  .s-clients { bottom: 50px; right: -10px; }
+  .s-live    { top: 30px;  left: -10px; }
+
+  /* ── GREYROCK WATERMARK ───────────────────────── */
+  .watermark {
+    position: fixed;
+    bottom: 18px;
+    right: 22px;
+    font-size: 11px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.28);
+    letter-spacing: 0.06em;
+    z-index: 200;
+    pointer-events: none;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .watermark span {
+    color: rgba(232,160,32,0.45);
+    font-weight: 500;
+  }
+
+  /* ── MOBILE ───────────────────────────────────── */
+  @media (max-width: 900px) {
+    nav { padding: 0 4%; }
+    .nav-links { gap: 18px; }
+    .nav-links li:not(:last-child):not(:first-child) { display: none; }
+  }
+
+  @media (max-width: 720px) {
+    .hero { padding: 90px 5% 50px; }
+
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .hero-visual { height: 260px; order: -1; }
+
+    .vis-ring-1 { width: 240px; height: 240px; }
+    .vis-ring-2 { width: 178px; height: 178px; }
+    .vis-ring-3 { width: 116px; height: 116px; }
+    .vis-center { width: 72px; height: 72px; }
+    .vis-orbit-wrap   { width: 178px; height: 178px; }
+    .vis-orbit-wrap-2 { width: 240px; height: 240px; }
+
+    .vis-stat  { display: none; }
+    .vis-stat-badge { display: none; }
+
+    .hero-headline { font-size: clamp(38px, 9vw, 52px); }
+    .hero-sub { font-size: 15px; }
+
+    .trust-bar { gap: 14px; }
+    .trust-item { font-size: 11px; }
+  }
+
+  @media (max-width: 480px) {
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .hero-ctas { flex-direction: column; }
+    .btn-primary, .btn-secondary { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ─────────────────────────────── -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="logo-mark">
+      <!-- Snowflake / engineering icon -->
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <line x1="10" y1="1" x2="10" y2="19" stroke="#0B1925" stroke-width="2" stroke-linecap="round"/>
+        <line x1="1" y1="10" x2="19" y2="10" stroke="#0B1925" stroke-width="2" stroke-linecap="round"/>
+        <line x1="3.22" y1="3.22" x2="16.78" y2="16.78" stroke="#0B1925" stroke-width="2" stroke-linecap="round"/>
+        <line x1="16.78" y1="3.22" x2="3.22" y2="16.78" stroke="#0B1925" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="10" cy="10" r="2.5" fill="#0B1925"/>
+      </svg>
+    </div>
+    <div class="logo-text">
+      Lo-Temp Engineering
+      <span>Winter Garden, FL · Est. 1993</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Projects</a></li>
+    <li><div class="divider"></div></li>
+    <li><a href="#">Lo-Temp Laser</a></li>
+    <li><a href="tel:4076544055" class="nav-cta">Call 407-654-4055</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ───────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+
+    <!-- LEFT: Copy -->
+    <div class="hero-left">
+
+      <div class="hero-eyebrow">
+        <span class="eyebrow-dot"></span>
+        Licensed &amp; Certified · CAC052429
+      </div>
+
+      <h1 class="hero-headline">
+        Commercial<br>
+        Refrigeration &amp;<br>
+        <em>A/C Experts</em><br>
+        You Can Count On
+      </h1>
+
+      <p class="hero-sub">
+        Serving theme parks, resorts, restaurants, and food facilities across Central Florida for
+        <strong>over 30 years</strong> — factory-certified, fully licensed, and available
+        <strong>24 hours a day, 7 days a week</strong>.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="tel:4076544055" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M14.6 11.267l-2.633-.3a1.3 1.3 0 0 0-1.067.367l-1.9 1.9A9.9 9.9 0 0 1 4.767 9l1.9-1.9a1.3 1.3 0 0 0 .366-1.067l-.3-2.633A1.333 1.333 0 0 0 5.4 2H3.333C2.6 2 2 2.6 2 3.333 2 9.8 6.2 14 12.667 14c.733 0 1.333-.6 1.333-1.333v-2.067a1.333 1.333 0 0 0-1.4-1.333z" fill="currentColor"/>
+          </svg>
+          Request a Service Call
+        </a>
+        <a href="#" class="btn-secondary">
+          View Our Projects
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Trust Bar -->
+      <div class="trust-bar">
+        <div class="trust-item">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+            <path d="M7.5 1l1.618 3.618L13 5.236l-2.75 2.68.65 3.784L7.5 9.882l-3.4 1.818.65-3.784L2 5.236l3.882-.618L7.5 1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" fill="none"/>
+          </svg>
+          Licensed &amp; Insured
+        </div>
+        <div class="trust-item">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+            <circle cx="7.5" cy="7.5" r="6" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M7.5 4v3.5l2 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          24/7 Emergency Service
+        </div>
+        <div class="trust-item">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+            <path d="M7.5 1L9.3 5.5H14L10.35 8.2l1.4 4.5L7.5 10l-4.25 2.7 1.4-4.5L1 5.5h4.7L7.5 1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+          </svg>
+          30+ Years Experience
+        </div>
+        <div class="trust-item">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+            <rect x="1" y="3" width="13" height="10" rx="1.5" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M1 6h13" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M5 1v2M10 1v2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          Factory Certified
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Engineering Visual -->
+    <div class="hero-visual">
+      <div class="vis-ring vis-ring-1"></div>
+      <div class="vis-ring vis-ring-2"></div>
+      <div class="vis-ring vis-ring-3"></div>
+
+      <!-- Orbiting elements -->
+      <div class="vis-orbit-wrap">
+        <div class="vis-dot"></div>
+      </div>
+      <div class="vis-orbit-wrap-2">
+        <div class="vis-dot-2"></div>
+      </div>
+
+      <!-- Center -->
+      <div class="vis-center">
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+          <line x1="26" y1="4" x2="26" y2="48" stroke="#E8A020" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="4" y1="26" x2="48" y2="26" stroke="#E8A020" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="8.7" y1="8.7" x2="43.3" y2="43.3" stroke="#E8A020" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="43.3" y1="8.7" x2="8.7" y2="43.3" stroke="#E8A020" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="26" cy="26" r="8" fill="#E8A020" opacity="0.15"/>
+          <circle cx="26" cy="26" r="4.5" fill="#E8A020"/>
+        </svg>
+      </div>
+
+      <!-- Stat cards -->
+      <div class="vis-stat s-years">
+        <div class="vis-stat-num">30+</div>
+        <div class="vis-stat-label">Years in Business</div>
+      </div>
+
+      <div class="vis-stat s-clients">
+        <div class="vis-stat-num">8</div>
+        <div class="vis-stat-label">Factory Certifications</div>
+      </div>
+
+      <div class="vis-stat-badge s-live">
+        <div class="badge-dot"></div>
+        24/7 On-Call Service
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── GREYROCK WATERMARK ─────────────────────── -->
+<div class="watermark">Mockup by <span>Greyrock Designs</span></div>
+
+</body>
+</html>
