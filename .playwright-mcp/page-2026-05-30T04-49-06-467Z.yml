@@ -1,0 +1,242 @@
+- generic [ref=e4]:
+  - main [ref=e6]:
+    - generic [ref=e8]:
+      - navigation [ref=e11]:
+        - generic [ref=e13]:
+          - generic [ref=e14]:
+            - navigation
+          - link "K & R Plumbing, LLC" [ref=e17] [cursor=pointer]:
+            - /url: /
+            - img "K & R Plumbing, LLC" [ref=e19]
+          - navigation [ref=e21]
+      - generic [ref=e23]:
+        - generic [ref=e25]:
+          - heading "Reliable and Professional Licensed and Insured Commercial and Residential" [level=1] [ref=e28]
+          - paragraph [ref=e31]:
+            - emphasis [ref=e33]:
+              - strong [ref=e34]: Book now for our unparalleled service!
+          - link "Book Now" [ref=e38] [cursor=pointer]:
+            - /url: mailto:krplumbing2019@gmail.com
+        - img [ref=e41]
+  - region [ref=e43]:
+    - generic [ref=e46]:
+      - heading "Coupons/ Specials" [level=2] [ref=e48]:
+        - text: Coupons/ Specials
+        - separator [ref=e50]
+      - link "Download 2025 Coupons" [ref=e53] [cursor=pointer]:
+        - /url: //img1.wsimg.com/blobby/go/14e5688b-7d4d-415d-b14e-5489010ba700/downloads/dbed50bf-96c9-4f93-bee1-aac6d7cd93c9/2025%20Coupons.docx?ver=1744986176584
+        - generic [ref=e54]:
+          - generic [ref=e55]: 2025 Coupons (docx)
+          - button "Download" [ref=e56]:
+            - img [ref=e57]
+            - generic [ref=e59]: Download
+  - region [ref=e61]:
+    - generic [ref=e64]:
+      - heading "About Us" [level=2] [ref=e65]:
+        - text: About Us
+        - separator [ref=e67]
+      - generic [ref=e68]:
+        - generic [ref=e70]:
+          - img [ref=e75]
+          - generic [ref=e77]:
+            - heading "Reliable Professionals" [level=4] [ref=e78]
+            - paragraph [ref=e80]: Whether you need a simple faucet installation or complete sewer line replacement, we offer a wide range of residential and commercial plumbing services to meet your needs. We continually strive to exceed expectations by ensuring that each client receives the very best service. Commercial and Residential Plumbing services are available around the clock.
+        - generic [ref=e82]:
+          - img [ref=e87]
+          - generic [ref=e89]:
+            - heading "Individualized Plumbing Options" [level=4] [ref=e90]
+            - paragraph [ref=e92]: We strive to exceed expectations by ensuring that all plumbing work is completed to the highest standards. We will provide you with a free consultation to explain all of your available options so that you can choose the scope or work that’s right for your home or business.
+        - generic [ref=e94]:
+          - img [ref=e99]
+          - generic [ref=e101]:
+            - heading "Customer Satisfaction Guaranteed" [level=4] [ref=e102]
+            - paragraph [ref=e104]: We serve both residential and commercial clients and offer a variety of money-saving solutions. We combine our use of the highest quality parts and equipment, and our dedication to delivering exceptional work to provide you with satisfactory service.
+        - generic [ref=e106]:
+          - img [ref=e111]
+          - paragraph [ref=e115]: As a local, family-owned-and-operated company, we are available around the clock for your emergencies. We provide flat-rate pricing and detailed explanations, so you are left with no questions before your work begins.
+  - region [ref=e117]:
+    - generic [ref=e120]:
+      - generic [ref=e121]:
+        - heading "Frequently Asked Questions" [level=2] [ref=e122]:
+          - text: Frequently Asked Questions
+          - separator [ref=e124]
+        - paragraph [ref=e128]: Please contact us if you cannot find an answer to your question.
+      - generic [ref=e131]:
+        - button "How much does it cost for a consultation?" [ref=e133] [cursor=pointer]:
+          - heading "How much does it cost for a consultation?" [ref=e134]
+          - img [ref=e135]
+        - separator [ref=e137]
+        - button "Can you clear grease stoppages from our restaurant drains?" [ref=e139] [cursor=pointer]:
+          - heading "Can you clear grease stoppages from our restaurant drains?" [ref=e140]
+          - img [ref=e141]
+        - separator [ref=e143]
+        - button "Are you a licensed contractor?" [ref=e145] [cursor=pointer]:
+          - heading "Are you a licensed contractor?" [ref=e146]
+          - img [ref=e147]
+        - separator [ref=e149]
+  - region [ref=e151]:
+    - generic [ref=e153]:
+      - heading "Check out some of our work!" [level=2] [ref=e155]:
+        - text: Check out some of our work!
+        - separator [ref=e157]
+      - generic [ref=e165]:
+        - list [ref=e167]:
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+        - generic:
+          - generic:
+            - generic:
+              - list
+              - button [ref=e168] [cursor=pointer]:
+                - img [ref=e169]
+        - generic:
+          - button [ref=e171] [cursor=pointer]:
+            - img [ref=e172]
+          - button [ref=e174] [cursor=pointer]:
+            - img [ref=e175]
+  - region [ref=e178]:
+    - img [ref=e180]:
+      - heading "Reviews" [level=2] [ref=e184]
+  - region [ref=e188]:
+    - generic [ref=e191]:
+      - heading "Connect with us on Social Media" [level=2] [ref=e193]:
+        - text: Connect with us on Social Media
+        - separator [ref=e195]
+      - link "Facebook Social Link" [ref=e197] [cursor=pointer]:
+        - /url: https://www.facebook.com/106426365762860
+        - img [ref=e198]
+  - region [ref=e201]:
+    - generic [ref=e204]:
+      - heading "Subscribe" [level=2] [ref=e205]
+      - generic [ref=e209]:
+        - paragraph [ref=e210]: Sign up to receive maintenance tips and hear about our latest projects
+        - generic [ref=e212]:
+          - generic [ref=e214]:
+            - textbox "Email" [ref=e215]
+            - generic: Email
+          - button "Sign up" [ref=e216] [cursor=pointer]
+  - region [ref=e218]:
+    - generic [ref=e220]:
+      - generic [ref=e224]:
+        - heading "Contact Us" [level=2] [ref=e225]:
+          - text: Contact Us
+          - separator [ref=e227]
+        - generic [ref=e228]:
+          - generic [ref=e229]:
+            - heading "24 Hour Emergency Service Available!!!" [level=4] [ref=e230]
+            - paragraph [ref=e232]: We strive to be in constant communication with our customers until the job is done. For emergency service, to get a free quote, or if you have questions or special requests, just drop us a line. We look forward to serving you!
+          - generic [ref=e233]:
+            - heading "K & R Plumbing, LLC" [level=4] [ref=e234]
+            - paragraph [ref=e235]: 1031 Exchange Place Suite 103, Saint Cloud, FL, 34769 USA
+            - paragraph [ref=e236]:
+              - text: "24 HR #"
+              - link "407-979-1033" [ref=e237] [cursor=pointer]:
+                - /url: tel:4079791033
+              - link "KRPlumbing2019@Gmail.com" [ref=e238] [cursor=pointer]:
+                - /url: mailto:KRPlumbing2019@Gmail.com
+          - generic [ref=e240]:
+            - heading "Hours of Operation" [level=4] [ref=e241]
+            - table [ref=e244]:
+              - rowgroup [ref=e245]:
+                - row "Open today 12:00 am – 12:00 am" [ref=e246] [cursor=pointer]:
+                  - cell "Open today" [ref=e247]:
+                    - paragraph [ref=e248]: Open today
+                  - cell "12:00 am – 12:00 am" [ref=e249]:
+                    - paragraph [ref=e250]:
+                      - button "12:00 am – 12:00 am" [ref=e251]
+                  - cell [ref=e252]:
+                    - paragraph [ref=e253]:
+                      - button [ref=e254]:
+                        - img [ref=e255]
+            - paragraph [ref=e258]: K & R Plumbing LLC has undertaken full-service plumbing and construction services for the clients of Lake County, Seminole County, Orange County, Brevard County, Osceola County, and Some area's in Polk County.
+          - generic [ref=e262]:
+            - generic [ref=e265]:
+              - heading "Get a Free Quote" [level=4] [ref=e266]
+              - generic [ref=e267]:
+                - generic [ref=e268]:
+                  - generic [ref=e269]:
+                    - generic [ref=e272]:
+                      - textbox "Name" [ref=e273]
+                      - generic: Name
+                    - generic [ref=e276]:
+                      - textbox "Email*" [ref=e277]
+                      - generic: Email*
+                    - generic [ref=e280]:
+                      - textbox "Phone" [ref=e281]
+                      - generic: Phone
+                    - generic [ref=e284]:
+                      - textbox "Address (Street, City, Zip Code)" [ref=e285]
+                      - generic: Address (Street, City, Zip Code)
+                  - textbox "How can we help?" [ref=e289]
+                - generic [ref=e290]:
+                  - paragraph [ref=e292]:
+                    - text: This site is protected by reCAPTCHA and the Google
+                    - link "Privacy Policy" [ref=e293] [cursor=pointer]:
+                      - /url: https://policies.google.com/privacy
+                    - text: and
+                    - link "Terms of Service" [ref=e294] [cursor=pointer]:
+                      - /url: https://policies.google.com/terms
+                    - text: apply.
+                  - generic [ref=e295]:
+                    - button "Send" [ref=e297] [cursor=pointer]
+                    - generic [ref=e298]: Cancel
+            - button "Get a Free Quote" [ref=e300] [cursor=pointer]
+      - button "Get directions" [ref=e305] [cursor=pointer]:
+        - generic [ref=e306]:
+          - img [ref=e308]:
+            - img [ref=e309]
+          - generic [ref=e311]: Get directions
+  - region [ref=e314]:
+    - img [ref=e316]:
+      - generic [ref=e317]:
+        - heading "My Blog" [level=2] [ref=e319]
+        - img [ref=e323]
+  - contentinfo [ref=e326]:
+    - generic [ref=e331]:
+      - paragraph [ref=e334]: Copyright © 2025 K & R Plumbing, LLC - All Rights Reserved.
+      - generic [ref=e336]:
+        - paragraph [ref=e337]: Powered by
+        - link [ref=e338] [cursor=pointer]:
+          - /url: https://www.godaddy.com/websites/website-builder?isc=pwugc&utm_source=wsb&utm_medium=applications&utm_campaign=en-us_corp_applications_base
+          - img [ref=e339]
+  - generic [ref=e345]:
+    - heading "This website uses cookies." [level=4] [ref=e346]
+    - paragraph [ref=e348]: We use cookies to analyze website traffic and optimize your website experience. By accepting our use of cookies, your data will be aggregated with all other user data.
+    - link "Accept" [ref=e350] [cursor=pointer]:
+      - /url: ""

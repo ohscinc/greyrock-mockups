@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pike's Electric Inc. | Trusted Electricians in Wildwood & The Villages, FL</title>
+<meta name="description" content="Family-owned electricians serving Wildwood, The Villages, Sumter, Lake & Marion counties since 1988. A+ BBB rated. Free estimates. Call (352) 748-6251." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+
+<style>
+  /* ---------- Tokens ---------- */
+  :root{
+    --yellow: #FFCB05;       /* Pike's brand yellow */
+    --yellow-deep: #E8B400;
+    --ink: #1B2A5B;          /* Pike's brand navy blue */
+    --ink-2: #243573;        /* slightly lifted blue */
+    --ink-deep: #131F45;     /* deeper blue for depth */
+    --slate: #4F5A78;
+    --line: #E4E6EE;
+    --paper: #F4F5FA;        /* cool off-white tinted to blue */
+    --paper-2: #FFFFFF;
+    --white: #ffffff;
+    --red: #C2410C;          /* emergency accent */
+    --green: #166534;
+
+    --radius-sm: 6px;
+    --radius: 14px;
+    --radius-lg: 22px;
+
+    --shadow-sm: 0 1px 2px rgba(27,42,91,.08), 0 1px 1px rgba(27,42,91,.04);
+    --shadow:   0 10px 30px -12px rgba(27,42,91,.22), 0 2px 6px rgba(27,42,91,.06);
+    --shadow-lg:0 30px 60px -20px rgba(19,31,69,.35);
+
+    --max: 1200px;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:'Archivo',system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit;cursor:pointer;border:none;background:none}
+
+  h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.05;letter-spacing:-0.02em;margin:0}
+  h1{font-size:clamp(2.4rem,6vw,4.8rem)}
+  h2{font-size:clamp(1.9rem,4vw,3.2rem)}
+  h3{font-size:clamp(1.2rem,2vw,1.5rem);letter-spacing:-0.01em}
+  p{margin:0}
+
+  .container{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+  /* ---------- Top utility bar ---------- */
+  .topbar{
+    background:var(--ink-deep);color:#C7CDE0;
+    font-size:.82rem;font-weight:500;
+    padding:8px 0;letter-spacing:.02em;
+  }
+  .topbar .container{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .topbar .lic{opacity:.7}
+  .topbar a{color:var(--yellow);font-weight:600}
+
+  /* ---------- Header ---------- */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(244,245,250,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:24px}
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo-img{height:54px;width:auto;display:block}
+  .foot-logo{display:flex;align-items:center}
+  .foot-logo-img{height:60px;width:auto;display:block;background:rgba(255,255,255,.95);padding:8px 14px;border-radius:8px}
+  nav.primary{display:flex;gap:32px;align-items:center}
+  nav.primary a{font-weight:500;font-size:.95rem;position:relative;padding:6px 0;transition:color .2s}
+  nav.primary a:hover{color:var(--ink)}
+  nav.primary a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--yellow);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+  nav.primary a:hover::after{transform:scaleX(1)}
+  .header-cta{display:flex;align-items:center;gap:10px}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 20px;border-radius:999px;
+    font-weight:600;font-size:.95rem;letter-spacing:.01em;
+    transition:transform .15s ease, box-shadow .2s ease, background .2s;
+  }
+  .btn-primary{background:var(--yellow);color:var(--ink);box-shadow:var(--shadow-sm)}
+  .btn-primary:hover{background:var(--yellow-deep);transform:translateY(-1px);box-shadow:var(--shadow)}
+  .btn-dark{background:var(--ink);color:var(--paper-2)}
+  .btn-dark:hover{background:var(--ink-2);transform:translateY(-1px)}
+  .btn-ghost{background:transparent;border:1.5px solid var(--ink);color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper-2)}
+
+  .hamburger{display:none;width:42px;height:42px;border-radius:8px;border:1px solid var(--line);background:var(--white);align-items:center;justify-content:center}
+  .hamburger span{display:block;width:18px;height:2px;background:var(--ink);position:relative}
+  .hamburger span::before,.hamburger span::after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--ink)}
+  .hamburger span::before{top:-6px}
+  .hamburger span::after{top:6px}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    padding:80px 0 100px;
+    background:
+      radial-gradient(ellipse at top right, rgba(255,203,5,.18), transparent 55%),
+      radial-gradient(ellipse at bottom left, rgba(27,42,91,.08), transparent 50%),
+      var(--paper);
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      linear-gradient(var(--ink) 1px, transparent 1px),
+      linear-gradient(90deg, var(--ink) 1px, transparent 1px);
+    background-size:64px 64px;
+    opacity:.025;
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;
+    position:relative;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:8px 14px;border-radius:999px;
+    background:var(--ink);color:var(--yellow);
+    font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  }
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 4px rgba(255,203,5,.25);animation:pulse 2s infinite}
+  @keyframes pulse{
+    0%,100%{box-shadow:0 0 0 4px rgba(255,203,5,.25)}
+    50%{box-shadow:0 0 0 8px rgba(255,203,5,0)}
+  }
+  .hero h1{margin:18px 0 20px}
+  .hero h1 .accent{
+    background:linear-gradient(180deg, transparent 60%, var(--yellow) 60%);
+    padding:0 4px;
+  }
+  .hero .lede{font-size:1.15rem;color:var(--slate);max-width:540px;margin-bottom:32px}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px}
+  .btn-lg{padding:16px 26px;font-size:1.02rem}
+  .phone-strong{font-family:'Fraunces',serif;font-weight:700;font-size:1.15em}
+  .trust-row{display:flex;gap:28px;flex-wrap:wrap;align-items:center}
+  .trust-item{display:flex;align-items:center;gap:10px;font-size:.88rem;color:var(--ink-2);font-weight:500}
+  .trust-item svg{flex-shrink:0;color:var(--green)}
+
+  /* Hero card */
+  .hero-card{
+    background:var(--ink);color:var(--paper-2);
+    border-radius:var(--radius-lg);
+    padding:36px;
+    box-shadow:var(--shadow-lg);
+    position:relative;overflow:hidden;
+    transform:rotate(.5deg);
+  }
+  .hero-card::before{
+    content:"";position:absolute;top:-60px;right:-60px;
+    width:220px;height:220px;border-radius:50%;
+    background:radial-gradient(circle,var(--yellow) 0%,transparent 70%);
+    opacity:.4;
+  }
+  .hero-card-label{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--yellow);font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .hero-card-label::before{content:"";width:24px;height:1.5px;background:var(--yellow)}
+  .hero-card h3{font-size:1.7rem;color:var(--paper-2);margin-bottom:24px}
+  .quick-form{display:grid;gap:12px;position:relative;z-index:1}
+  .quick-form input, .quick-form select{
+    width:100%;padding:14px 16px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:10px;color:var(--paper-2);font-family:inherit;font-size:.95rem;
+    transition:border-color .2s, background .2s;
+  }
+  .quick-form input::placeholder{color:rgba(255,255,255,.45)}
+  .quick-form input:focus, .quick-form select:focus{outline:none;border-color:var(--yellow);background:rgba(255,255,255,.1)}
+  .quick-form select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%23FFCB05' d='M6 8L0 0h12z'/></svg>");background-repeat:no-repeat;background-position:right 16px center;background-size:10px}
+  .quick-form button{
+    background:var(--yellow);color:var(--ink);
+    padding:15px;border-radius:10px;font-weight:700;font-size:1rem;
+    transition:background .2s, transform .15s;
+    margin-top:4px;
+  }
+  .quick-form button:hover{background:#FFD93D;transform:translateY(-1px)}
+  .form-foot{font-size:.78rem;color:rgba(255,255,255,.55);margin-top:8px;text-align:center}
+
+  /* ---------- Stats strip ---------- */
+  .stats{
+    background:var(--ink);color:var(--paper-2);
+    padding:36px 0;
+  }
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+  .stat{text-align:center;border-right:1px solid rgba(255,255,255,.12);padding:8px 0}
+  .stat:last-child{border-right:none}
+  .stat-num{font-family:'Fraunces',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--yellow);line-height:1}
+  .stat-lbl{font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-top:8px;font-weight:500}
+
+  /* ---------- Sections ---------- */
+  section{padding:90px 0}
+  .section-head{max-width:680px;margin-bottom:56px}
+  .section-eyebrow{
+    font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;
+    font-weight:700;color:var(--ink);
+    display:inline-flex;align-items:center;gap:10px;margin-bottom:16px;
+  }
+  .section-eyebrow::before{content:"";width:30px;height:2px;background:var(--yellow)}
+  .section-head h2{margin-bottom:16px}
+  .section-head p{color:var(--slate);font-size:1.08rem}
+
+  /* Why us */
+  .why{background:var(--paper-2)}
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .why-card{
+    background:var(--white);border:1px solid var(--line);
+    border-radius:var(--radius);padding:28px;
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s;
+    position:relative;
+  }
+  .why-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--yellow)}
+  .why-icon{
+    width:52px;height:52px;border-radius:12px;
+    background:var(--paper);
+    display:grid;place-items:center;color:var(--ink);
+    margin-bottom:18px;
+    border:1px solid var(--line);
+  }
+  .why-card:hover .why-icon{background:var(--yellow);border-color:var(--yellow)}
+  .why-card h3{margin-bottom:8px;font-size:1.25rem}
+  .why-card p{font-size:.94rem;color:var(--slate)}
+
+  /* Services */
+  .services{background:var(--paper)}
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .service{
+    background:var(--white);
+    border-radius:var(--radius);padding:28px;
+    border:1px solid var(--line);
+    display:flex;gap:18px;align-items:flex-start;
+    transition:all .25s ease;
+    position:relative;overflow:hidden;
+  }
+  .service::before{
+    content:"";position:absolute;top:0;left:0;width:0;height:3px;background:var(--yellow);
+    transition:width .3s ease;
+  }
+  .service:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:transparent}
+  .service:hover::before{width:100%}
+  .service-icon{
+    flex-shrink:0;width:44px;height:44px;border-radius:10px;
+    background:var(--paper);display:grid;place-items:center;color:var(--ink);
+  }
+  .service h4{font-family:'Archivo',sans-serif;font-size:1.02rem;font-weight:600;letter-spacing:0;margin:0 0 4px;line-height:1.3}
+  .service p{font-size:.85rem;color:var(--slate);line-height:1.45}
+
+  .services-cta{
+    margin-top:48px;
+    background:var(--ink);color:var(--paper-2);
+    border-radius:var(--radius-lg);
+    padding:48px;
+    display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;
+    position:relative;overflow:hidden;
+  }
+  .services-cta::before{
+    content:"";position:absolute;right:-100px;bottom:-100px;
+    width:300px;height:300px;border-radius:50%;
+    background:var(--yellow);opacity:.08;
+  }
+  .services-cta h3{font-size:1.8rem;color:var(--paper-2);margin-bottom:8px}
+  .services-cta p{color:rgba(255,255,255,.75);max-width:480px}
+  .services-cta .btn{flex-shrink:0;position:relative;z-index:1}
+
+  /* Reviews */
+  .reviews{background:var(--ink);color:var(--paper-2)}
+  .reviews .section-eyebrow{color:var(--yellow)}
+  .reviews .section-eyebrow::before{background:var(--yellow)}
+  .reviews .section-head h2{color:var(--paper-2)}
+  .reviews .section-head p{color:rgba(255,255,255,.7)}
+  .reviews-stars{display:flex;align-items:center;gap:14px;margin-bottom:24px}
+  .stars{display:flex;gap:2px;color:var(--yellow)}
+  .reviews-meta{font-size:.92rem;color:rgba(255,255,255,.7)}
+  .reviews-meta strong{color:var(--paper-2);font-weight:600}
+  .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .review-card{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:var(--radius);padding:30px;
+    transition:all .25s ease;
+  }
+  .review-card:hover{background:rgba(255,255,255,.07);border-color:var(--yellow)}
+  .review-quote{font-family:'Fraunces',serif;font-size:1.18rem;line-height:1.45;font-weight:400;font-style:italic;margin-bottom:24px;color:var(--paper-2)}
+  .review-author{display:flex;align-items:center;gap:12px}
+  .review-avatar{
+    width:44px;height:44px;border-radius:50%;
+    background:var(--yellow);color:var(--ink);
+    display:grid;place-items:center;font-weight:700;font-family:'Archivo',sans-serif;
+  }
+  .review-name{font-weight:600;font-size:.95rem}
+  .review-loc{font-size:.82rem;color:rgba(255,255,255,.6)}
+
+  /* Service area */
+  .area{background:var(--paper-2)}
+  .area-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .area-list{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px}
+  .area-list li{
+    list-style:none;padding:16px 18px;
+    background:var(--white);border:1px solid var(--line);
+    border-radius:10px;font-weight:500;
+    display:flex;align-items:center;gap:10px;
+    transition:border-color .2s;
+  }
+  .area-list li:hover{border-color:var(--yellow)}
+  .area-list svg{color:var(--yellow);flex-shrink:0}
+  .area-map{
+    aspect-ratio:1/1;border-radius:var(--radius-lg);overflow:hidden;
+    box-shadow:var(--shadow);
+    border:6px solid var(--ink);
+    background:var(--paper);
+    position:relative;
+  }
+  .area-map iframe{width:100%;height:100%;border:none;display:block}
+  .area-badge{
+    position:absolute;bottom:20px;left:20px;
+    background:var(--ink);color:var(--paper-2);
+    padding:14px 18px;border-radius:10px;
+    font-size:.85rem;font-weight:600;
+    box-shadow:var(--shadow);
+  }
+  .area-badge .yellow{color:var(--yellow);display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;margin-bottom:2px}
+
+  /* Final CTA */
+  .final{
+    background:var(--yellow);
+    position:relative;overflow:hidden;
+    padding:90px 0;
+  }
+  .final::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(14,17,22,.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(14,17,22,.05) 0%, transparent 50%);
+  }
+  .final-inner{position:relative;text-align:center;max-width:780px;margin:0 auto}
+  .final h2{font-size:clamp(2.2rem,5vw,3.6rem);margin-bottom:20px}
+  .final p{font-size:1.15rem;color:var(--ink-2);margin-bottom:36px}
+  .final-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  /* Footer */
+  footer{background:var(--ink);color:rgba(255,255,255,.7);padding:70px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+  .foot-grid h4{font-family:'Archivo',sans-serif;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--yellow);margin-bottom:18px;font-weight:700}
+  .foot-grid ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+  .foot-grid a{font-size:.95rem;transition:color .2s}
+  .foot-grid a:hover{color:var(--yellow)}
+  .foot-about{font-size:.95rem;line-height:1.6;margin-top:14px;max-width:340px}
+  .foot-logo{display:flex;align-items:center;gap:10px;color:var(--paper-2);font-family:'Fraunces',serif;font-weight:700;font-size:1.4rem}
+  .foot-bottom{
+    border-top:1px solid rgba(255,255,255,.1);padding-top:24px;
+    display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+    font-size:.82rem;
+  }
+  .socials{display:flex;gap:10px}
+  .socials a{
+    width:36px;height:36px;border-radius:50%;
+    background:rgba(255,255,255,.06);
+    display:grid;place-items:center;
+    transition:background .2s;
+  }
+  .socials a:hover{background:var(--yellow);color:var(--ink)}
+
+  /* Mobile sticky call */
+  .mobile-call{
+    display:none;
+    position:fixed;bottom:16px;left:16px;right:16px;z-index:60;
+    background:var(--yellow);color:var(--ink);
+    padding:16px;border-radius:14px;
+    font-weight:700;text-align:center;
+    box-shadow:0 10px 30px rgba(14,17,22,.25);
+    align-items:center;justify-content:center;gap:10px;
+  }
+
+  /* Mobile menu */
+  .mobile-menu{
+    display:none;
+    position:fixed;top:0;left:0;right:0;bottom:0;
+    background:var(--paper);z-index:100;
+    padding:24px;
+    flex-direction:column;
+  }
+  .mobile-menu.open{display:flex}
+  .mobile-menu-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px}
+  .mobile-menu nav{display:flex;flex-direction:column;gap:8px}
+  .mobile-menu nav a{
+    font-family:'Fraunces',serif;font-size:1.8rem;font-weight:600;
+    padding:12px 0;border-bottom:1px solid var(--line);
+  }
+  .close-btn{width:42px;height:42px;border-radius:8px;border:1px solid var(--line);background:var(--white);display:grid;place-items:center;font-size:1.5rem}
+  .mobile-menu-cta{margin-top:auto;display:grid;gap:10px}
+
+  /* Reveal animation */
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 980px){
+    .hero{padding:50px 0 70px}
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .hero-card{transform:none}
+    .stats-grid{grid-template-columns:repeat(2,1fr);gap:28px}
+    .stat:nth-child(2){border-right:none}
+    .why-grid{grid-template-columns:repeat(2,1fr)}
+    .services-grid{grid-template-columns:repeat(2,1fr)}
+    .reviews-grid{grid-template-columns:1fr;gap:18px}
+    .area-grid{grid-template-columns:1fr;gap:40px}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:36px}
+    nav.primary, .header-cta .btn-ghost{display:none}
+    .hamburger{display:flex}
+    section{padding:64px 0}
+    .services-cta{padding:36px 28px;text-align:center;justify-content:center}
+    .services-cta > div{width:100%}
+  }
+
+  @media (max-width: 640px){
+    .container{padding:0 18px}
+    .logo-img{height:44px}
+    .why-grid{grid-template-columns:1fr;gap:14px}
+    .services-grid{grid-template-columns:1fr}
+    .area-list{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr;gap:32px}
+    .topbar{font-size:.75rem;padding:6px 0}
+    .topbar .lic{display:none}
+    .mobile-call{display:flex}
+    body{padding-bottom:80px}
+    .hero{padding:40px 0 60px}
+    .hero-card{padding:28px}
+    .final{padding:64px 0}
+    .header-cta .btn-primary{padding:10px 14px;font-size:.85rem}
+  }
+</style>
+</head>
+<body>
+
+<!-- Top utility bar -->
+<div class="topbar">
+  <div class="container">
+    <span>📍 Serving Wildwood, The Villages & Central Florida</span>
+    <span class="lic">Licensed · Insured · Bonded · EC0002441</span>
+    <span>Call us: <a href="tel:13527486251">(352) 748-6251</a></span>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="site">
+  <div class="container nav">
+    <a href="#" class="logo">
+      <img src="https://pikeselectric.com/wp-content/uploads/2017/03/Untitled.png" alt="Pike's Electric Inc." class="logo-img" />
+    </a>
+    <nav class="primary">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-cta">
+      <a href="#estimate" class="btn btn-ghost">Free Estimate</a>
+      <a href="tel:13527486251" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (352) 748-6251
+      </a>
+      <button class="hamburger" id="openMenu" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu overlay -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-head">
+    <a href="#" class="logo">
+      <img src="https://pikeselectric.com/wp-content/uploads/2017/03/Untitled.png" alt="Pike's Electric Inc." class="logo-img" />
+    </a>
+    <button class="close-btn" id="closeMenu" aria-label="Close menu">×</button>
+  </div>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#why">Why Us</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#area">Service Area</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="mobile-menu-cta">
+    <a href="tel:13527486251" class="btn btn-primary btn-lg">Call (352) 748-6251</a>
+    <a href="#estimate" class="btn btn-ghost btn-lg">Get Free Estimate</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow"><span class="dot"></span>Family-Owned Since 1988</span>
+      <h1>Trusted electricians for <span class="accent">homes</span> across Central Florida.</h1>
+      <p class="lede">From a flickering light to a whole-home generator, Pike's Electric has earned Central Florida's trust for over 30 years — with up-front pricing, on-time arrivals, and a one-year workmanship warranty.</p>
+      <div class="hero-ctas">
+        <a href="tel:13527486251" class="btn btn-dark btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call <span class="phone-strong">(352) 748-6251</span>
+        </a>
+        <a href="#estimate" class="btn btn-primary btn-lg">Get a Free Estimate →</a>
+      </div>
+      <div class="trust-row">
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          A+ BBB Accredited
+        </div>
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          1-Year Warranty
+        </div>
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Up-Front Pricing
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick estimate form card -->
+    <aside class="hero-card" id="estimate">
+      <div class="hero-card-label">Free Estimate</div>
+      <h3>Tell us what you need.</h3>
+      <form class="quick-form" onsubmit="event.preventDefault(); alert('Thanks! Our team will reach out shortly.');">
+        <input type="text" placeholder="Your name" required />
+        <input type="tel" placeholder="Phone number" required />
+        <select required>
+          <option value="">What can we help with?</option>
+          <option>Ceiling fan installation</option>
+          <option>Panel upgrade</option>
+          <option>Whole-home generator</option>
+          <option>EV charger outlet</option>
+          <option>Lighting / outlets</option>
+          <option>Troubleshooting</option>
+          <option>Something else</option>
+        </select>
+        <input type="text" placeholder="ZIP code" required />
+        <button type="submit">Request My Free Estimate</button>
+        <p class="form-foot">Or call (352) 748-6251 — a real person answers.</p>
+      </form>
+    </aside>
+  </div>
+</section>
+
+<!-- Stats strip -->
+<div class="stats">
+  <div class="container stats-grid">
+    <div class="stat">
+      <div class="stat-num">30+</div>
+      <div class="stat-lbl">Years in Business</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">A+</div>
+      <div class="stat-lbl">BBB Rating</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">5★</div>
+      <div class="stat-lbl">Angie's Super Service</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">1 Yr</div>
+      <div class="stat-lbl">Workmanship Warranty</div>
+    </div>
+  </div>
+</div>
+
+<!-- Why us -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">Why Pike's</div>
+      <h2>Old-school service. Modern standards.</h2>
+      <p>We've built our reputation in The Villages and across Central Florida one careful job at a time. Here's what you can count on every visit.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3>Up-Front Pricing</h3>
+        <p>You get the price before we start. No surprise charges, no upselling, no games.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>On-Time Arrival</h3>
+        <p>Short, specific arrival windows — not a half-day. We confirm the day before, every time.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>30+ Years Experience</h3>
+        <p>Our service electricians have 25+ years in the field. Background-checked, drug-free, courteous.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3>1-Year Warranty</h3>
+        <p>Every installation is backed by a full one-year warranty on workmanship and parts we supply.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">Our Services</div>
+      <h2>Whole-home electrical, done right.</h2>
+      <p>From simple outlet repairs to whole-home generator installations, our licensed electricians handle every project to code — and to your standards.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service reveal">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <div>
+          <h4>Whole-Home Generators</h4>
+          <p>Authorized Generac installations to keep your home powered through any storm.</p>
+        </div>
+      </div>
+      <div class="service reveal">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <div>
+          <h4>EV Charger Outlets</h4>
+          <p>Level 2 charging outlets for your EV, installed safely and to manufacturer spec.</p>
+        </div>
+      </div>
+      <div class="service reveal">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div>
+          <h4>Panel Upgrades</h4>
+          <p>Modernize your electrical panel for safety, capacity, and insurance compliance.</p>
+        </div>
+      </div>
+      <div class="service reveal">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+        </div>
+        <div>
+          <h4>Lighting & Fans</h4>
+          <p>Recessed lights, ceiling fans, LED tape lighting, landscape & soffit lighting.</p>
+        </div>
+      </div>
+      <div class="service reveal">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <h4>Surge Protection</h4>
+          <p>Whole-home surge protectors to defend your appliances from Florida storms.</p>
+        </div>
+      </div>
+      <div class="service reveal">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11H5a2 2 0 0 0-2 2v7h6v-7"/><path d="M15 11h-2V8a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v9h-4z"/><line x1="3" y1="20" x2="21" y2="20"/></svg>
+        </div>
+        <div>
+          <h4>Outlets & Switches</h4>
+          <p>Install, repair, or relocate outlets — including 220v spa, golf cart, and pool circuits.</p>
+        </div>
+      </div>
+      <div class="service reveal">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        </div>
+        <div>
+          <h4>Remodels & Rewiring</h4>
+          <p>New construction and full remodel wiring done right and inspected the first time.</p>
+        </div>
+      </div>
+      <div class="service reveal">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <div>
+          <h4>Inspection Repairs</h4>
+          <p>We evaluate home inspection reports and fix electrical findings fast — closing on time.</p>
+        </div>
+      </div>
+      <div class="service reveal">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div>
+          <h4>Troubleshooting</h4>
+          <p>Mystery breaker tripping? Flickering lights? We diagnose the root cause — fast.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="services-cta reveal">
+      <div>
+        <h3>Don't see what you need?</h3>
+        <p>If it's electrical, chances are we do it. Give us a call and we'll let you know straight up — no run-around.</p>
+      </div>
+      <a href="tel:13527486251" class="btn btn-primary btn-lg">Call (352) 748-6251</a>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">What Customers Say</div>
+      <h2>Trusted by neighbors across The Villages.</h2>
+      <div class="reviews-stars">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="reviews-meta"><strong>5.0 average</strong> · Angie's Super Service Award winner</div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <p class="review-quote">"Top-notch customer service, professionalism, and knowledge. We can recommend this company with no reservation. Complete trust."</p>
+        <div class="review-author">
+          <div class="review-avatar">W</div>
+          <div>
+            <div class="review-name">Mr. Wiley</div>
+            <div class="review-loc">The Villages, FL</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <p class="review-quote">"Pike's is prompt, professional, and courteous at ALL levels. From the office to the truck — first-class operation."</p>
+        <div class="review-author">
+          <div class="review-avatar">S</div>
+          <div>
+            <div class="review-name">Mr. Sharpe</div>
+            <div class="review-loc">Wildwood, FL</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <p class="review-quote">"Pike's is amazing. Work gets done. No fuss, no mess, and cost-effective. All my switch screws are aligned — that's the attention to detail."</p>
+        <div class="review-author">
+          <div class="review-avatar">W</div>
+          <div>
+            <div class="review-name">The Witzke Family</div>
+            <div class="review-loc">Sumter County, FL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Service area -->
+<section class="area" id="area">
+  <div class="container area-grid">
+    <div class="reveal">
+      <div class="section-eyebrow">Service Area</div>
+      <h2>Proudly serving Central Florida.</h2>
+      <p style="color:var(--slate);margin-top:14px;font-size:1.05rem">Headquartered in Wildwood, we're the trusted local choice for homes throughout Sumter, Lake, Marion, and Citrus counties — including the entire Villages community.</p>
+      <ul class="area-list">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> The Villages</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Wildwood</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Sumter County</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Lake County</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Marion County</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Citrus County</li>
+      </ul>
+    </div>
+    <div class="area-map reveal">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3494.5344692622816!2d-82.0596603854439!3d28.852716782331505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e7dd2156192b6f%3A0xe972f02916b74eb8!2sPike's%20Electric%20Inc.!5e0!3m2!1sen!2sus!4v1570057667816!5m2!1sen!2sus" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Pike's Electric Location"></iframe>
+      <div class="area-badge">
+        <span class="yellow">HQ</span>
+        719 Industrial Dr, Wildwood
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final" id="contact">
+  <div class="container final-inner">
+    <h2>Ready to get it done right?</h2>
+    <p>Free estimates. Up-front pricing. A real person answers the phone. Let's solve your electrical project today.</p>
+    <div class="final-ctas">
+      <a href="tel:13527486251" class="btn btn-dark btn-lg">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (352) 748-6251
+      </a>
+      <a href="#estimate" class="btn btn-ghost btn-lg" style="border-color:var(--ink);color:var(--ink)">Request Free Estimate</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">
+          <img src="https://pikeselectric.com/wp-content/uploads/2017/03/Untitled.png" alt="Pike's Electric Inc." class="foot-logo-img" />
+        </div>
+        <p class="foot-about">Family-owned, Wildwood-based electricians serving The Villages and Central Florida since 1988. Licensed, insured, and bonded — EC0002441.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Generators</a></li>
+          <li><a href="#services">EV Chargers</a></li>
+          <li><a href="#services">Panel Upgrades</a></li>
+          <li><a href="#services">Lighting</a></li>
+          <li><a href="#services">Surge Protection</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#why">About Us</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#area">Service Area</a></li>
+          <li><a href="#">Latest News</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:13527486251">(352) 748-6251</a></li>
+          <li><a href="mailto:pikesservice@pikeselectric.com">pikesservice@<br>pikeselectric.com</a></li>
+          <li>719 Industrial Drive<br>Wildwood, FL 34785</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© <span id="yr"></span> Pike's Electric Inc. · License EC0002441 · All rights reserved.</div>
+      <div class="socials">
+        <a href="https://www.facebook.com/Pikes-Electric-154460157923677/" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile sticky call -->
+<a href="tel:13527486251" class="mobile-call">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  Call Pike's: (352) 748-6251
+</a>
+
+<script>
+  // Year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Mobile menu
+  const menu = document.getElementById('mobileMenu');
+  document.getElementById('openMenu').addEventListener('click', () => menu.classList.add('open'));
+  document.getElementById('closeMenu').addEventListener('click', () => menu.classList.remove('open'));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
